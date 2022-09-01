@@ -1,7 +1,14 @@
 # TSTable
 
+## Description
 SwiftUI Simple Table View.
+Tables are supported starting with Xcode 14, but not supported in earlier versions. 
+TSTable was created for versions prior to Xcode14.
 
+For iOS13+
+
+
+## Image
 ![image](./TSTableImage.png)
 
 ## Demo
