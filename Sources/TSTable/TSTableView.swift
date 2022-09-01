@@ -8,14 +8,14 @@
 import SwiftUI
 
 public struct TSTableView<T>: View where T: Hashable {
-    let elements: [T]
-    var columns: [TSTableColumn<T>]
-    var hSpacing: CGFloat
-    var vSpacing: CGFloat
+    public let elements: [T]
+    public var columns: [TSTableColumn<T>]
+    public var hSpacing: CGFloat
+    public var vSpacing: CGFloat
     
-    var selection: Binding<T?>?
+    public var selection: Binding<T?>?
     
-    init(
+    public init(
         elements: [T],
         _ columns: TSTableColumn<T>...,
         hSpacing: CGFloat = 10,
@@ -27,7 +27,7 @@ public struct TSTableView<T>: View where T: Hashable {
         self.vSpacing = vSpacing
     }
     
-    init(
+    public init(
         elements: [T],
         selection: Binding<T?>?,
         _ columns: TSTableColumn<T>...,
@@ -132,7 +132,7 @@ extension TSTableView {
 struct TSTableView_Previews: PreviewProvider {
     static var previews: some View {
         TSTableView(
-            elements: Person.getMock(),
+            elements: TSTablePerson.getMock(),
             TSTableColumn(name: "name", value: \.givenName),
             TSTableColumn(name: "familyName", value: \.familyName),
             TSTableColumn(name: "emailAddress", value: \.emailAddress, widthRatio: 0.5)

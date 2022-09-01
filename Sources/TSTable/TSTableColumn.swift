@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct TSTableColumn<T>: Hashable where T: Hashable {
-    let name: String
-    let value: KeyPath<T, String>
-    var widthRatio: CGFloat?
+public struct TSTableColumn<T>: Hashable where T: Hashable {
+    public let name: String
+    public let value: KeyPath<T, String>
+    public var widthRatio: CGFloat?
 }

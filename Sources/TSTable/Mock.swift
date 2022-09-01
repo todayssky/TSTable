@@ -7,20 +7,20 @@
 
 import Foundation
 
-struct Person: Identifiable, Hashable {
-    let givenName: String
-    let familyName: String
-    let emailAddress: String
-    let id = UUID()
+public struct TSTablePerson: Identifiable, Hashable {
+    public let givenName: String
+    public let familyName: String
+    public let emailAddress: String
+    public let id = UUID()
 }
 
-extension Person {
-    static func getMock() -> [Person] {
+extension TSTablePerson {
+    public static func getMock() -> [TSTablePerson] {
         [
-            Person(givenName: "Juan", familyName: "Chavez", emailAddress: "juanchavez@icloud.com"),
-            Person(givenName: "Mei", familyName: "Chen", emailAddress: "meichen@icloud.com"),
-            Person(givenName: "Tom", familyName: "Clark", emailAddress: "tomclark@icloud.com"),
-            Person(givenName: "Gita", familyName: "Kumar", emailAddress: "gitakumar@icloud.com")
+            TSTablePerson(givenName: "Juan", familyName: "Chavez", emailAddress: "juanchavez@icloud.com"),
+            TSTablePerson(givenName: "Mei", familyName: "Chen", emailAddress: "meichen@icloud.com"),
+            TSTablePerson(givenName: "Tom", familyName: "Clark", emailAddress: "tomclark@icloud.com"),
+            TSTablePerson(givenName: "Gita", familyName: "Kumar", emailAddress: "gitakumar@icloud.com")
         ]
     }
 }
