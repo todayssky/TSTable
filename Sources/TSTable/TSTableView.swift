@@ -102,14 +102,14 @@ extension TSTableView {
         column: TSTableColumn<T>
     ) -> some View {
         TextBackgroundColor(index: index)
-            .if(column == columns.first, transform: { view in
+            .if(column == columns.first) { view in
                 view.cornerRadius(6, corners: [.topLeft, .bottomLeft])
-            })
-                .if(column == columns.last, transform: { view in
-                    view.cornerRadius(6, corners: [.topRight, .bottomRight])
-                })
-                    .padding(.horizontal, -hSpacing * 0.5)
-                    .padding(.vertical, -vSpacing * 0.5)
+            }
+            .if(column == columns.last) { view in
+                view.cornerRadius(6, corners: [.topRight, .bottomRight])
+            }
+            .padding(.horizontal, -hSpacing * 0.5)
+            .padding(.vertical, -vSpacing * 0.5)
     }
     
     func TextBackgroundColor(index: Int) -> Color {
@@ -131,8 +131,16 @@ extension TSTableView {
 
 struct TSTableView_Previews: PreviewProvider {
     static var previews: some View {
+        ContentView()
+    }
+}
+
+struct ContentView: View {
+    @State var selection: TSTablePerson?
+    var body: some View {
         TSTableView(
             elements: TSTablePerson.getMock(),
+            selection: $selection,
             TSTableColumn(name: "name", value: \.givenName),
             TSTableColumn(name: "familyName", value: \.familyName),
             TSTableColumn(name: "emailAddress", value: \.emailAddress, widthRatio: 0.5)

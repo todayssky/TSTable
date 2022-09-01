@@ -7,11 +7,10 @@
 
 import Foundation
 
-public struct TSTablePerson: Identifiable, Hashable {
+public struct TSTablePerson: Hashable {
     public let givenName: String
     public let familyName: String
     public let emailAddress: String
-    public let id = UUID()
 }
 
 extension TSTablePerson {
