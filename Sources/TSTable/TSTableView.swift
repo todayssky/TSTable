@@ -131,6 +131,13 @@ extension TSTableView {
 
 struct TSTableView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TSTableView(
+            elements: people,
+            TSTableColumn(name: "name", value: \.givenName),
+            TSTableColumn(name: "familyName", value: \.familyName),
+            TSTableColumn(name: "emailAddress", value: \.emailAddress, widthRatio: 0.5)
+        )
+        .font(.footnote)
+        .padding()
     }
 }
