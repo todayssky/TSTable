@@ -1,3 +1,3 @@
 # TSTable
 
-A description of this package.
+SwiftUI Simple Table View.
