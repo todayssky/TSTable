@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct TSTableView<T>: View where T: Hashable {
-    private let elements: [T]
-    private var columns: [TSTableColumn<T>]
-    private var hSpacing: CGFloat
-    private var vSpacing: CGFloat
+public struct TSTableView<T>: View where T: Hashable {
+    let elements: [T]
+    var columns: [TSTableColumn<T>]
+    var hSpacing: CGFloat
+    var vSpacing: CGFloat
     
-    private var selection: Binding<T?>?
+    var selection: Binding<T?>?
     
     init(
         elements: [T],
@@ -41,7 +41,7 @@ struct TSTableView<T>: View where T: Hashable {
         self.vSpacing = vSpacing
     }
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { geometry in
             HStack(spacing: hSpacing) {
                 ForEach(columns, id: \.self) { column in
@@ -132,7 +132,7 @@ extension TSTableView {
 struct TSTableView_Previews: PreviewProvider {
     static var previews: some View {
         TSTableView(
-            elements: people,
+            elements: Person.getMock(),
             TSTableColumn(name: "name", value: \.givenName),
             TSTableColumn(name: "familyName", value: \.familyName),
             TSTableColumn(name: "emailAddress", value: \.emailAddress, widthRatio: 0.5)
