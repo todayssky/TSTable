@@ -2,7 +2,7 @@
 
 SwiftUI Simple Table View.
 
-![image](./TSTable.png)
+![image](./TSTableImage.png)
 
 ## Demo
 Added an example project, with iOS, watchOS target: https://github.com/todayssky/TSTableDemo
